@@ -48,6 +48,7 @@ create table tuning_parts (
 create table tuning_parts_models (
   part_id int(6),
   model_id int(6),
+  installation_time_minutes int(6),
   foreign key (part_id) references tuning_parts(id),
   foreign key (model_id) references models(id)
 );
@@ -101,25 +102,25 @@ INSERT INTO models (id, name, production_year, brand_id) VALUES
 (6, 'S1000RR', 2020, 6);
 
 -- Verknüpfungen zwischen Tuningteilen und Modellen einfügen
-INSERT INTO tuning_parts_models (part_id, model_id) VALUES
-(1, 1), -- Akrapovič Slip-On Exhaust for Honda CBR1000RR
-(1, 2), -- Akrapovič Slip-On Exhaust for Yamaha YZF-R6
-(1, 3), -- Akrapovič Slip-On Exhaust for Suzuki GSX-R750
-(2, 1), -- Öhlins Rear Shock Absorber for Honda CBR1000RR
-(2, 2), -- Öhlins Rear Shock Absorber for Yamaha YZF-R6
-(2, 3), -- Öhlins Rear Shock Absorber for Suzuki GSX-R750
-(3, 1), -- Dynojet Power Commander for Honda CBR1000RR
-(3, 2), -- Dynojet Power Commander for Yamaha YZF-R6
-(3, 3), -- Dynojet Power Commander for Suzuki GSX-R750
-(4, 1), -- Brembo Brake Pads for Honda CBR1000RR
-(4, 2), -- Brembo Brake Pads for Yamaha YZF-R6
-(4, 3), -- Brembo Brake Pads for Suzuki GSX-R750
-(5, 1), -- Puig Windscreen for Honda CBR1000RR
-(5, 2), -- Puig Windscreen for Yamaha YZF-R6
-(5, 3), -- Puig Windscreen for Suzuki GSX-R750
-(1, 4), -- Akrapovič Slip-On Exhaust for Kawasaki Ninja ZX-10R
-(1, 5), -- Akrapovič Slip-On Exhaust for Ducati Panigale V4
-(1, 6), -- Akrapovič Slip-On Exhaust for BMW S1000RR
-(2, 4), -- Öhlins Rear Shock Absorber for Kawasaki Ninja ZX-10R
-(2, 5), -- Öhlins Rear Shock Absorber for Ducati Panigale V4
-(2, 6); -- Öhlins Rear Shock Absorber for BMW S1000RR
+INSERT INTO tuning_parts_models (part_id, model_id, installation_time_minutes) VALUES
+(1, 1, 30), -- Akrapovič Slip-On Exhaust for Honda CBR1000RR
+(1, 2, 20), -- Akrapovič Slip-On Exhaust for Yamaha YZF-R6
+(1, 3, 50), -- Akrapovič Slip-On Exhaust for Suzuki GSX-R750
+(2, 1, 300), -- Öhlins Rear Shock Absorber for Honda CBR1000RR
+(2, 2, 200), -- Öhlins Rear Shock Absorber for Yamaha YZF-R6
+(2, 3, 100), -- Öhlins Rear Shock Absorber for Suzuki GSX-R750
+(3, 1, 100), -- Dynojet Power Commander for Honda CBR1000RR
+(3, 2, 60), -- Dynojet Power Commander for Yamaha YZF-R6
+(3, 3, 120), -- Dynojet Power Commander for Suzuki GSX-R750
+(4, 1, 100), -- Brembo Brake Pads for Honda CBR1000RR
+(4, 2, 60), -- Brembo Brake Pads for Yamaha YZF-R6
+(4, 3, 40), -- Brembo Brake Pads for Suzuki GSX-R750
+(5, 1, 20), -- Puig Windscreen for Honda CBR1000RR
+(5, 2, 30), -- Puig Windscreen for Yamaha YZF-R6
+(5, 3, 40), -- Puig Windscreen for Suzuki GSX-R750
+(1, 4, 30), -- Akrapovič Slip-On Exhaust for Kawasaki Ninja ZX-10R
+(1, 5, 30), -- Akrapovič Slip-On Exhaust for Ducati Panigale V4
+(1, 6, 40), -- Akrapovič Slip-On Exhaust for BMW S1000RR
+(2, 4, 60), -- Öhlins Rear Shock Absorber for Kawasaki Ninja ZX-10R
+(2, 5, 60), -- Öhlins Rear Shock Absorber for Ducati Panigale V4
+(2, 6, 60); -- Öhlins Rear Shock Absorber for BMW S1000RR
